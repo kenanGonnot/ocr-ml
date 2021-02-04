@@ -6,8 +6,17 @@ docker run -v /Users/boris/Downloads/dataset/test:/app/out/ \
           trdg -c 100  -w 1 -f 22  -dt /app/out/dic.txt
 ```
 
+## convert images to matrix
 
+in octave execute : 
+``` 
+convertImagesToMatrix
+```
 
+## Check 
 
-
+To display 100 random case retrieved from the previous matrix 
+```
+display
+```
 
