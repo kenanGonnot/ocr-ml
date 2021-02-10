@@ -28,10 +28,15 @@ for i=1:numel(files)
   	X = [X ; x(:)'];
 
 	y = str2num(substr(name,1, 1));
+	if y==0
+		y = 10; 
+	endif
 	Y = [Y ; y];
+
 
 endfor
 
+X = double(X);
 
 save -binary matrix.mat X Y;         % save X, Y, and Z matrices to myfile.mat
 
