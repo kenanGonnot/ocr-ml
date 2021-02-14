@@ -20,7 +20,6 @@ fprintf('\nTraining Neural Network... \n')
 
 
 %  You should also try different values of lambda
-lambda = 0.1;
 
 costFunction = @(p) nnCostFunction(p, ...
                                    input_layer_size, ...
@@ -30,7 +29,7 @@ costFunction = @(p) nnCostFunction(p, ...
 % Now, costFunction is a function that takes in only one argument (the
 % neural network parameters)
 
-options = optimset('MaxIter', 20);
+options = optimset('MaxIter', 200);
 [nn_params, cost] = fmincg(costFunction, initial_nn_params, options);
 
 theta = nn_params;

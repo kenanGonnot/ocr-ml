@@ -15,19 +15,12 @@ Yval = Y(rand_indices(1:200), :);
 fprintf('\nCompute Learning Curve\n');
 
 
-lambda = 0;
+lambda = 0.1;
 
 [error_train, error_val] = ...
     learningCurve(X, Y, ...
                   Xval, Yval, lambda, ...
                   input_layer_size, hidden_layer_size, num_labels);
-
-% [error_train, error_val] = ...
-%     learningCurve([ones(m, 1) X], Y, ...
-%                   [ones(size(Xval, 1), 1) Xval], Yval, lambda, ...
-%                   input_layer_size, hidden_layer_size, num_labels);
-
-
 
 
 fprintf('\nerror_train\n');
@@ -42,12 +35,12 @@ title('Learning curve for linear regression')
 legend('Train', 'Cross Validation')
 xlabel('Number of training examples')
 ylabel('Error')
-axis([0 13 0 150])
+axis([0 10 0 14])
 
 fprintf('# Training Examples\tTrain Error\tCross Validation Error\n');
-% for i = 1:m
-%    fprintf('  \t%d\t\t%f\t%f\n', i, error_train(i), error_val(i));
-% end
+for i = 1:m
+   fprintf('  \t%d\t\t%f\t%f\n', i, error_train(i), error_val(i));
+end
 
 fprintf('Program paused. Press enter to continue.\n');
 pause;
