@@ -30,10 +30,11 @@ fprintf(' cost for first case %d', cost );
 %
 fprintf('\nTraining Neural Network... \n')
 
-options = optimset('MaxIter', 250);
+% options = optimset('MaxIter', 2500);
+options = optimset('MaxIter', 5000);
 
 %  You should also try different values of lambda
-lambda = 1;
+lambda = 0.1;
 
 costFunction = @(p) nnCostFunction(p, ...
                                    input_layer_size, ...
@@ -52,8 +53,7 @@ Theta1 = reshape(nn_params(1:hidden_layer_size * (input_layer_size + 1)), ...
 Theta2 = reshape(nn_params((1 + (hidden_layer_size * (input_layer_size + 1))):end), ...
                  num_labels, (hidden_layer_size + 1));
 
-fprintf('Program paused. Press enter to continue.\n');
-pause;
+fprintf('Program paused. Press enter to continue.\n\n');
 
 
 

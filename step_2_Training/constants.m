@@ -1,4 +1,4 @@
-hidden_layer_size = 120; 
+hidden_layer_size = 240; 
 num_labels = 10;
 
 
