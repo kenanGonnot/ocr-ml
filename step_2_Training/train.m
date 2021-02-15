@@ -59,6 +59,7 @@ fprintf('Program paused. Press enter to continue.\n\n');
 
 check;
 
+displayPrediction;
 
 
 

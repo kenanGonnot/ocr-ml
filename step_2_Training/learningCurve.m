@@ -7,7 +7,7 @@ error_val   = zeros(m, 1);
 
 
 
-for i = 1:(m/100)
+for i = 1:(m)
 	fprintf('   Set size %i\n', i);
 
 	fprintf('\n    - compute theta\n');
