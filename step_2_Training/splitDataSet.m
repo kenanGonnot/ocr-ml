@@ -15,7 +15,7 @@ Ytest=[];
 Xtrain=[];
 Ytrain=[];
 
-%% =========== Split =============
+%% =========== Split ============= num_labels
 
 for i = 1:num_labels
 	currentBucketIndices = find(Y == i);
@@ -24,18 +24,18 @@ for i = 1:num_labels
 
 
 	bucketSize = size(Xcurrent,1);
-	extractedDataSize = int32(bucketSize*0.2);
+	extractedDataSize = int32(bucketSize*0.2)-1;
 
 	rand_indices = randperm(bucketSize);
 
-	Xval = [Xval ; Xcurrent(rand_indices(1:extractedDataSize-1), :)];
-	Yval = [Yval ; Ycurrent(rand_indices(1:extractedDataSize-1), :)];
+	Xval = [Xval ; Xcurrent(rand_indices(1:extractedDataSize), :)];
+	Yval = [Yval ; Ycurrent(rand_indices(1:extractedDataSize), :)];
 
-	Xtest = [Xtest ; Xcurrent(rand_indices(extractedDataSize:2*extractedDataSize-1), :)];
-	Ytest = [Ytest ; Ycurrent(rand_indices(extractedDataSize:2*extractedDataSize-1), :)];
+	Xtest = [Xtest ; Xcurrent(rand_indices(extractedDataSize+1:2*extractedDataSize), :)];
+	Ytest = [Ytest ; Ycurrent(rand_indices(extractedDataSize+1:2*extractedDataSize), :)];
 
-	Xtrain = [Xtrain ; Xcurrent(rand_indices(2*extractedDataSize:bucketSize), :)];
-	Ytrain = [Ytrain ; Ycurrent(rand_indices(2*extractedDataSize:bucketSize), :)];
+	Xtrain = [Xtrain ; Xcurrent(rand_indices(2*extractedDataSize+1:bucketSize), :)];
+	Ytrain = [Ytrain ; Ycurrent(rand_indices(2*extractedDataSize+1:bucketSize), :)];
 
 endfor
 
