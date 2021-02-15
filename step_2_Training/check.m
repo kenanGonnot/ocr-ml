@@ -1,8 +1,8 @@
 
 
-pred = predict(Theta1, Theta2, X);
+pred = predict(Theta1, Theta2, Xtest);
 
-fprintf('\nTraining Set Accuracy: %f\n', mean(double(pred == Y)) * 100);
+fprintf('\nTraining Set Accuracy: %f\n', mean(double(pred == Ytest)) * 100);
 
 
 

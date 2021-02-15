@@ -4,7 +4,7 @@ clear ; close all; clc
 %% setup the parameters you will use 
 
 
-load('../step_1_GenerateData/matrix.mat');
+load('./dataSet.mat');
 
 constants;
 
@@ -22,7 +22,7 @@ initial_nn_params = [initial_Theta1(:) ; initial_Theta2(:)];
 cost = nnCostFunction(initial_nn_params, ...
 	                   input_layer_size, ...
 	                   hidden_layer_size, ...
-	                   num_labels, X(1:1,:), Y(1:1), 0)
+	                   num_labels, Xtrain(1:1,:), Ytrain(1:1), 0)
 
 fprintf(' cost for first case %d', cost );
 
@@ -30,7 +30,7 @@ fprintf(' cost for first case %d', cost );
 %
 fprintf('\nTraining Neural Network... \n')
 
-options = optimset('MaxIter', 100);
+options = optimset('MaxIter', 250);
 
 %  You should also try different values of lambda
 lambda = 1;
@@ -38,7 +38,7 @@ lambda = 1;
 costFunction = @(p) nnCostFunction(p, ...
                                    input_layer_size, ...
                                    hidden_layer_size, ...
-                                   num_labels, X, Y, lambda);
+                                   num_labels, Xtrain, Ytrain, lambda);
 
 % Now, costFunction is a function that takes in only one argument (the
 % neural network parameters)
