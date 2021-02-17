@@ -12,6 +12,10 @@ fprintf('\nCompute Learning Curve\n');
 
 lambda = 0.1;
 
+random = randperm(size(Xtrain,1));
+Ytrain=Ytrain(random);
+Xtrain=Xtrain(random,:);
+
 [error_train, error_val] = ...
     learningCurve(Xtrain, Ytrain, ...
                   Xval, Yval, lambda, ...
@@ -30,10 +34,10 @@ title('Learning curve for linear regression')
 legend('Train', 'Cross Validation')
 xlabel('Number of training examples')
 ylabel('Error')
-axis([0 10 0 14])
+axis([0 m/4 0 13])
 
 fprintf('# Training Examples\tTrain Error\tCross Validation Error\n');
-for i = 1:m
+for i = 1:(m/4)
    fprintf('  \t%d\t\t%f\t%f\n', i, error_train(i), error_val(i));
 end
 
