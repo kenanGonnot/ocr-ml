@@ -20,6 +20,8 @@ To display 100 random case retrieved from the previous matrix
 display
 ```
 
+## Temp
+
 Model 1
 	hidden layer : 25
 	lambda : 0.1
@@ -84,5 +86,34 @@ Model 4
 	   - Training Set Accuracy         : 98.474341
 	   - Cross Validation Set Accuracy : 90.625000
 	   - Test Set Accuracy             : 94.642857
+
+## Temp2 
+# Test Model with hidden layer 25
+Iteration  5000 | Cost: 2.534526e+00
+
+   final cost : 2.70528
+   accuracy   : 26.339286
+
+
+# Test Model with hidden layer 68
+Iteration  5000 | Cost: 1.564322e+00
+
+   final cost : 1.92573
+   accuracy   : 55.357143
+
+
+# Test Model with hidden layer 185
+Iteration  5000 | Cost: 1.175388e+00
+
+   final cost : 1.68068
+   accuracy   : 68.750000
+
+
+# Test Model with hidden layer 502
+Iteration  5000 | Cost: 2.949246e-01
+
+   final cost : 0.916141
+   accuracy   : 90.625000
+
 
 
