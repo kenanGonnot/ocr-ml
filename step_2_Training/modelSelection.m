@@ -15,9 +15,10 @@ Xtrain=Xtrain(random,:);
 
 %% =================== Model Selection (training) ===================
 fprintf('\nStart Model Selection\n');
+ctime(time)
 
 for i = 1:4
-	hidden_layer_size=int32(25 * exp(i-1));
+	hidden_layer_size=int32(25 * exp(i));
 
 	fprintf('\n\n# Test Model with hidden layer %i\n', hidden_layer_size );
 
@@ -27,7 +28,7 @@ for i = 1:4
 	initial_nn_params = [initial_Theta1(:) ; initial_Theta2(:)];
 
 	%% ---------------- Part 2 : Training NN
-	options = optimset('MaxIter', 5000);
+	options = optimset('MaxIter', 500);
 	lambda = 0.1;
 
 	costFunction = @(p) nnCostFunction(p, ...
@@ -53,5 +54,10 @@ for i = 1:4
 	fprintf('\n   final cost : %d', cost );
 	
 	pred = predict(Theta1, Theta2, Xval);
-	fprintf('\n   accuracy   : %f\n', mean(double(pred == Yval)) * 100);
+	accuracy=mean(double(pred == Yval)) * 100;
+	fprintf('\n   accuracy   : %f\n', accuracy);
+
+	filename=strcat("result-layer-", num2str(hidden_layer_size,"%03.f"), "-accuracy-", num2str(accuracy), ".mat");
+	save("-binary", filename, "Theta1", "Theta2", "hidden_layer_size");
 end
+ctime(time)

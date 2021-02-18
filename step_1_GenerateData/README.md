@@ -94,12 +94,32 @@ Iteration  5000 | Cost: 2.534526e+00
    final cost : 2.70528
    accuracy   : 26.339286
 
+	# Run 2
+	Iteration  5000 | Cost: 2.608831e+00
+	   final cost : 2.59896
+	   accuracy   : 30.803571
+
+	# Run 3
+	Iteration  5000 | Cost: 2.354328e-01
+	   final cost : 0.736977
+	   accuracy   : 90.625000
+
 
 # Test Model with hidden layer 68
 Iteration  5000 | Cost: 1.564322e+00
 
    final cost : 1.92573
    accuracy   : 55.357143
+
+	# Run 2
+	Iteration  5000 | Cost: 1.482289e+00
+	   final cost : 2.00063
+	   accuracy   : 58.035714
+
+	# Run 3
+	Iteration  5000 | Cost: 1.782003e+00
+	   final cost : 2.03592
+	   accuracy   : 54.464286
 
 
 # Test Model with hidden layer 185
@@ -108,6 +128,16 @@ Iteration  5000 | Cost: 1.175388e+00
    final cost : 1.68068
    accuracy   : 68.750000
 
+	# Run 2
+	Iteration  5000 | Cost: 9.912928e-01
+	   final cost : 1.30046
+	   accuracy   : 78.571429
+
+	# Run 3
+	Iteration  5000 | Cost: 8.467898e-01
+	   final cost : 1.16139
+	   accuracy   : 84.375000
+
 
 # Test Model with hidden layer 502
 Iteration  5000 | Cost: 2.949246e-01
@@ -115,5 +145,13 @@ Iteration  5000 | Cost: 2.949246e-01
    final cost : 0.916141
    accuracy   : 90.625000
 
+	# Run 2
+	Iteration  5000 | Cost: 2.354328e-01
+	   final cost : 0.736977
+	   accuracy   : 90.625000
 
+	# Run 3
+	Iteration  5000 | Cost: 2.524792e-01
+	   final cost : 0.785918
+	   accuracy   : 89.732143
 
