@@ -29,7 +29,7 @@ for i = 1:4
 
 	%% ---------------- Part 2 : Training NN
 	options = optimset('MaxIter', 500);
-	lambda = 0.1;
+	lambda = 0.64;
 
 	costFunction = @(p) nnCostFunction(p, ...
 	                                   input_layer_size, ...
@@ -49,7 +49,7 @@ for i = 1:4
 		                   hidden_layer_size, ...
 		                   num_labels, 
 		                   Xval, Yval,
-		                   lambda);
+		                   0);
 
 	fprintf('\n   final cost : %d', cost );
 	
